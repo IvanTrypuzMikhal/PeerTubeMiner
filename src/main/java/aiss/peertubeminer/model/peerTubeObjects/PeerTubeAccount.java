@@ -16,6 +16,7 @@ import com.fasterxml.jackson.annotation.*;
     "url",
     "avatars"
 })
+
 @Generated("jsonschema2pojo")
 public class PeerTubeAccount {
 
@@ -71,4 +72,14 @@ public class PeerTubeAccount {
         this.peerTubeAvatars = peerTubeAvatars;
     }
 
+    @Override
+    public String toString() {
+        return "PeerTubeAccount{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", url='" + url + '\'' +
+                ", peerTubeAvatars=" + peerTubeAvatars +
+                ", additionalProperties=" + additionalProperties +
+                '}';
+    }
 }
