@@ -13,20 +13,23 @@ import com.fasterxml.jackson.annotation.*;
 @JsonPropertyOrder({
     "id",
     "name",
-    "url",
-    "avatars"
+    "description",
+    "publishedAt",
+    "account",
 })
 @Generated("jsonschema2pojo")
-public class Account {
+public class Datum {
 
     @JsonProperty("id")
     private Integer id;
     @JsonProperty("name")
     private String name;
-    @JsonProperty("url")
-    private String url;
-    @JsonProperty("avatars")
-    private List<Avatar> avatars;
+    @JsonProperty("description")
+    private String description;
+    @JsonProperty("publishedAt")
+    private String publishedAt;
+    @JsonProperty("account")
+    private Account account;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
@@ -40,7 +43,6 @@ public class Account {
         this.id = id;
     }
 
-
     @JsonProperty("name")
     public String getName() {
         return name;
@@ -51,24 +53,27 @@ public class Account {
         this.name = name;
     }
 
-    @JsonProperty("url")
-    public String getUrl() {
-        return url;
+    @JsonProperty("description")
+    public String getDescription() {
+        return description;
     }
 
-    @JsonProperty("url")
-    public void setUrl(String url) {
-        this.url = url;
+    @JsonProperty("description")
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    @JsonProperty("avatars")
-    public List<Avatar> getAvatars() {
-        return avatars;
+    @JsonProperty("publishedAt")
+    public String getPublishedAt() {
+        return publishedAt;
     }
 
-    @JsonProperty("avatars")
-    public void setAvatars(List<Avatar> avatars) {
-        this.avatars = avatars;
+    @JsonProperty("publishedAt")
+    public void setPublishedAt(String publishedAt) {
+        this.publishedAt = publishedAt;
     }
 
+    @JsonProperty("account")
+    public Account getAccount() { return account; }
+    public void setAccount(Account account) { this.account = account; }
 }
