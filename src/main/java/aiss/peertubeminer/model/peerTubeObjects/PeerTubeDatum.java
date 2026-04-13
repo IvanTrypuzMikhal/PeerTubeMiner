@@ -2,7 +2,6 @@
 package aiss.peertubeminer.model.peerTubeObjects;
 
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 import javax.annotation.processing.Generated;
 
@@ -18,7 +17,7 @@ import com.fasterxml.jackson.annotation.*;
     "account",
 })
 @Generated("jsonschema2pojo")
-public class Datum {
+public class PeerTubeDatum {
 
     @JsonProperty("id")
     private Integer id;
@@ -29,7 +28,7 @@ public class Datum {
     @JsonProperty("publishedAt")
     private String publishedAt;
     @JsonProperty("account")
-    private Account account;
+    private PeerTubeAccount peerTubeAccount;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
@@ -74,6 +73,6 @@ public class Datum {
     }
 
     @JsonProperty("account")
-    public Account getAccount() { return account; }
-    public void setAccount(Account account) { this.account = account; }
+    public PeerTubeAccount getAccount() { return peerTubeAccount; }
+    public void setAccount(PeerTubeAccount peerTubeAccount) { this.peerTubeAccount = peerTubeAccount; }
 }

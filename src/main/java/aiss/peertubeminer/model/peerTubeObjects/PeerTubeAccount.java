@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.*;
     "avatars"
 })
 @Generated("jsonschema2pojo")
-public class Account {
+public class PeerTubeAccount {
 
     @JsonProperty("id")
     private Integer id;
@@ -26,7 +26,7 @@ public class Account {
     @JsonProperty("url")
     private String url;
     @JsonProperty("avatars")
-    private List<Avatar> avatars;
+    private List<PeerTubeAvatar> peerTubeAvatars;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
@@ -62,13 +62,13 @@ public class Account {
     }
 
     @JsonProperty("avatars")
-    public List<Avatar> getAvatars() {
-        return avatars;
+    public List<PeerTubeAvatar> getAvatars() {
+        return peerTubeAvatars;
     }
 
     @JsonProperty("avatars")
-    public void setAvatars(List<Avatar> avatars) {
-        this.avatars = avatars;
+    public void setAvatars(List<PeerTubeAvatar> peerTubeAvatars) {
+        this.peerTubeAvatars = peerTubeAvatars;
     }
 
 }

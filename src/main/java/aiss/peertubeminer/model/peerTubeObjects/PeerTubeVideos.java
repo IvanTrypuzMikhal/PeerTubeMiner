@@ -1,13 +1,9 @@
 
 package aiss.peertubeminer.model.peerTubeObjects;
 
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 import javax.annotation.processing.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -23,7 +19,7 @@ public class PeerTubeVideos {
     @JsonProperty("total")
     private Integer total;
     @JsonProperty("data")
-    private List<Datum> data;
+    private List<PeerTubeDatum> data;
 
     @JsonProperty("total")
     public Integer getTotal() {
@@ -36,12 +32,12 @@ public class PeerTubeVideos {
     }
 
     @JsonProperty("data")
-    public List<Datum> getData() {
+    public List<PeerTubeDatum> getData() {
         return data;
     }
 
     @JsonProperty("data")
-    public void setData(List<Datum> data) {
+    public void setData(List<PeerTubeDatum> data) {
         this.data = data;
     }
 
