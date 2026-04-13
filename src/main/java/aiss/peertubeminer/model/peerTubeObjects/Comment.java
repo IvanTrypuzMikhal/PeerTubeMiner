@@ -1,4 +1,4 @@
-package aiss.peertubeminer.model.objects;
+package aiss.peertubeminer.model.peerTubeObjects;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
