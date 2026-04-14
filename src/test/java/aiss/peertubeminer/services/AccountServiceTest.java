@@ -6,8 +6,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.List;
-
 @SpringBootTest
 class AccountServiceTest {
     @Autowired
@@ -29,7 +27,7 @@ class AccountServiceTest {
     @DisplayName("Get captions")
 
     void getCaptions(){
-        List<PTCaption> captions = captionService.getCaptions("3609");
+        PTCaptionList captions = captionService.getCaptions("3609");
         System.out.println(captions);
     }
 
@@ -41,7 +39,7 @@ class AccountServiceTest {
     @DisplayName("Get comments")
 
     void getComments(){
-        List<PTComment> comments = commentService.getComments("3601");
+        PTCommentList comments = commentService.getComments("3601");
         System.out.println(comments);
     }
 
