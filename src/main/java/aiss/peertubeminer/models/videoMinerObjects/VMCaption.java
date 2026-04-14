@@ -8,12 +8,12 @@ import jakarta.persistence.Table;
 
 public class VMCaption {
     private String id;
-    private String name;
+    private String link;
     private String language;
 
-    public VMCaption(String id, String name, String language) {
+    public VMCaption(String id, String link, String language) {
         this.id = id;
-        this.name = name;
+        this.link = link;
         this.language = language;
     }
 
@@ -26,11 +26,11 @@ public class VMCaption {
     }
 
     public String getName() {
-        return name;
+        return link;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.link = name;
     }
 
     public String getLanguage() {
@@ -45,7 +45,7 @@ public class VMCaption {
     public String toString() {
         return "Caption{" +
                 "id='" + id + '\'' +
-                ", name='" + name + '\'' +
+                ", name='" + link + '\'' +
                 ", language='" + language + '\'' +
                 '}';
     }
