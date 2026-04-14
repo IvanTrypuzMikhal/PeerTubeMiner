@@ -6,7 +6,7 @@ import aiss.peertubeminer.models.videoMinerObjects.*;
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class Transformer {
+public class    Transformer {
 
     public static VMCaption captionTransformer (PTCaption ptCaption){
         return new VMCaption(
