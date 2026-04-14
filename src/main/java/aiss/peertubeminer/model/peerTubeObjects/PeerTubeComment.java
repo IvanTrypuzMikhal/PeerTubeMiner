@@ -1,8 +1,7 @@
 
 package aiss.peertubeminer.model.peerTubeObjects;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
+
 import javax.annotation.processing.Generated;
 
 import com.fasterxml.jackson.annotation.*;
@@ -54,4 +53,12 @@ public class PeerTubeComment {
         this.createdAt = createdAt;
     }
 
+    @Override
+    public String toString() {
+        return "PeerTubeComment{" +
+                "id=" + id +
+                ", text='" + text + '\'' +
+                ", createdAt='" + createdAt + '\'' +
+                '}';
+    }
 }

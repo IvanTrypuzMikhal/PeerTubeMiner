@@ -54,4 +54,12 @@ public class PeerTubeCommentList {
         this.additionalProperties.put(name, value);
     }
 
+    @Override
+    public String toString() {
+        return "PeerTubeCommentList{" +
+                "data=" + data +
+                ", totalNotDeletedComments=" + totalNotDeletedComments +
+                ", additionalProperties=" + additionalProperties +
+                '}';
+    }
 }

@@ -75,4 +75,16 @@ public class PeerTubeVideo {
     @JsonProperty("account")
     public PeerTubeAccount getAccount() { return peerTubeAccount; }
     public void setAccount(PeerTubeAccount peerTubeAccount) { this.peerTubeAccount = peerTubeAccount; }
+
+    @Override
+    public String toString() {
+        return "PeerTubeVideo{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", publishedAt='" + publishedAt + '\'' +
+                ", peerTubeAccount=" + peerTubeAccount +
+                ", additionalProperties=" + additionalProperties +
+                '}';
+    }
 }

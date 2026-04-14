@@ -28,4 +28,10 @@ public class PeerTubeVideoList {
         this.data = data;
     }
 
+    @Override
+    public String toString() {
+        return "PeerTubeVideoList{" +
+                "data=" + data +
+                '}';
+    }
 }

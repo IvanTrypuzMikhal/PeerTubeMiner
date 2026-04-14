@@ -1,8 +1,6 @@
 package aiss.peertubeminer.services;
 
-import aiss.peertubeminer.model.peerTubeObjects.PeerTubeAccount;
-import aiss.peertubeminer.model.peerTubeObjects.PeerTubeCaptionList;
-import aiss.peertubeminer.model.peerTubeObjects.PeerTubeChannel;
+import aiss.peertubeminer.model.peerTubeObjects.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +29,29 @@ class AccountServiceTest {
     void getCaptions(){
         PeerTubeCaptionList captions = captionService.getCaptions("3609");
         System.out.println(captions);
+    }
+
+
+    @Autowired
+    CommentService commentService;
+
+    @Test
+    @DisplayName("Get comments")
+
+    void getComments(){
+        PeerTubeCommentList comments = commentService.getComments("3601");
+        System.out.println(comments);
+    }
+
+    @Autowired
+    VideoService videoService;
+
+    @Test
+    @DisplayName("Get videos of a channel")
+
+    void getVideos(){
+        PeerTubeVideoList videos = videoService.getVideos("angie_channel@peertube2.cpy.re");
+        System.out.println(videos);
     }
 
 
