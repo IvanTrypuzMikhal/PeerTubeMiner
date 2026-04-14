@@ -1,5 +1,5 @@
 
-package aiss.peertubeminer.model.peerTubeObjects;
+package aiss.peertubeminer.models.peerTubeObjects;
 
 import java.util.List;
 import javax.annotation.processing.Generated;

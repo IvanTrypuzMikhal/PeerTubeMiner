@@ -1,6 +1,6 @@
 package aiss.peertubeminer.services;
 
-import aiss.peertubeminer.model.peerTubeObjects.PTCaptionList;
+import aiss.peertubeminer.models.peerTubeObjects.PTCaptionList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;

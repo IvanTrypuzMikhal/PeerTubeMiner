@@ -1,7 +1,8 @@
 
-package aiss.peertubeminer.model.peerTubeObjects;
+package aiss.peertubeminer.models.peerTubeObjects;
 
-
+import java.util.LinkedHashMap;
+import java.util.Map;
 import javax.annotation.processing.Generated;
 
 import com.fasterxml.jackson.annotation.*;
@@ -9,19 +10,32 @@ import com.fasterxml.jackson.annotation.*;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
+    "name",
     "id",
-    "text",
     "createdAt",
+    "description"
 })
 @Generated("jsonschema2pojo")
-public class PTComment {
+public class PTChannel {
 
+    @JsonProperty("displayName")
+    private String name;
     @JsonProperty("id")
     private Integer id;
-    @JsonProperty("text")
-    private String text;
     @JsonProperty("createdAt")
     private String createdAt;
+    @JsonProperty("description")
+    private String description;
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     @JsonProperty("id")
     public Integer getId() {
@@ -31,16 +45,6 @@ public class PTComment {
     @JsonProperty("id")
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    @JsonProperty("text")
-    public String getText() {
-        return text;
-    }
-
-    @JsonProperty("text")
-    public void setText(String text) {
-        this.text = text;
     }
 
     @JsonProperty("createdAt")
@@ -53,12 +57,14 @@ public class PTComment {
         this.createdAt = createdAt;
     }
 
-    @Override
-    public String toString() {
-        return "PeerTubeComment{" +
-                "id=" + id +
-                ", text='" + text + '\'' +
-                ", createdAt='" + createdAt + '\'' +
-                '}';
+    @JsonProperty("description")
+    public String getDescription() {
+        return description;
     }
+
+    @JsonProperty("description")
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
 }
