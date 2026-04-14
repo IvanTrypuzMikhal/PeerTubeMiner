@@ -31,23 +31,23 @@ public class ChannelService {
 
 
     public VMChannel buildChannel(String channelName){
+
         PTChannel ptChannel = getChannel(channelName);
         VMChannel vmChannel = Transformer.channelTransformer(ptChannel);
 
         PTVideoList videos = videoService.getVideos(channelName);
         List<PTVideo> videoList = videos.getData();
 
-        List<VMVideo> vmVideos = new ArrayList<>();
         for(PTVideo ptVideo : videoList){
             VMVideo vmVideo = Transformer.videoTransformer(ptVideo);
             List<PTCaption> captionList = captionService.getCaptions(ptVideo.getId().toString());
             List<PTComment> commentList = commentService.getComments(ptVideo.getId().toString());
 
-            for(PTCaption ptCaption:captionList){
+            for(PTCaption ptCaption : captionList){
                 VMCaption vmCaption = Transformer.captionTransformer(ptCaption);
                 vmVideo.getCaptions().add(vmCaption);
             }
-            for(PTComment ptComment:commentList){
+            for(PTComment ptComment : commentList){
                 VMComment vmComment = Transformer.commentTransformer(ptComment);
                 vmVideo.getComments().add(vmComment);
             }
