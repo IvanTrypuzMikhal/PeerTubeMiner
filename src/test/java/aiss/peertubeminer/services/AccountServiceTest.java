@@ -1,13 +1,11 @@
 package aiss.peertubeminer.services;
 
 import aiss.peertubeminer.model.peerTubeObjects.PeerTubeAccount;
-import aiss.peertubeminer.model.peerTubeObjects.PeerTubeCaptions;
+import aiss.peertubeminer.model.peerTubeObjects.PeerTubeCaptionList;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class AccountServiceTest {
@@ -30,7 +28,7 @@ class AccountServiceTest {
     @DisplayName("Get captions")
 
     void getCaptions(){
-        PeerTubeCaptions captions = captionService.getCaptions("3609");
+        PeerTubeCaptionList captions = captionService.getCaptions("3609");
         System.out.println(captions);
     }
 

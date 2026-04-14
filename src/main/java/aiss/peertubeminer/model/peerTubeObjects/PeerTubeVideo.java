@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.*;
     "account",
 })
 @Generated("jsonschema2pojo")
-public class PeerTubeDatum {
+public class PeerTubeVideo {
 
     @JsonProperty("id")
     private Integer id;
