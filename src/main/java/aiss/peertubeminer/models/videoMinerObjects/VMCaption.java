@@ -5,23 +5,17 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-/**
- * @author Juan C. Alonso
- */
-@Entity
-@Table(name = "Caption")
+
 public class VMCaption {
-
-    @Id
-    @JsonProperty("id")
     private String id;
-
-    @JsonProperty("name")
     private String name;
-
-    @JsonProperty("language")
     private String language;
 
+    public VMCaption(String id, String name, String language) {
+        this.id = id;
+        this.name = name;
+        this.language = language;
+    }
 
     public String getId() {
         return id;
