@@ -67,4 +67,15 @@ public class PTChannel {
         this.description = description;
     }
 
+
+    @Override
+    public String toString() {
+        return "PTChannel{" +
+                "name='" + name + '\'' +
+                ", id=" + id +
+                ", createdAt='" + createdAt + '\'' +
+                ", description='" + description + '\'' +
+                ", additionalProperties=" + additionalProperties +
+                '}';
+    }
 }
