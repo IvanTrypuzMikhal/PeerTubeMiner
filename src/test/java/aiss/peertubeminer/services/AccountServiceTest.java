@@ -2,6 +2,7 @@ package aiss.peertubeminer.services;
 
 import aiss.peertubeminer.model.peerTubeObjects.PeerTubeAccount;
 import aiss.peertubeminer.model.peerTubeObjects.PeerTubeCaptionList;
+import aiss.peertubeminer.model.peerTubeObjects.PeerTubeChannel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,14 +11,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class AccountServiceTest {
     @Autowired
-    AccountService accountService;
+    ChannelService channelService;
 
     @Test
-    @DisplayName("Get account by name")
+    @DisplayName("Get channel by name")
 
     void getAccount(){
-        PeerTubeAccount account = accountService.getAccount("poney@peertube2.cpy.re");
-        System.out.println(account);
+        PeerTubeChannel channel = channelService.getChannel("poney@peertube2.cpy.re");
+        System.out.println(channel);
     }
 
     @Autowired
