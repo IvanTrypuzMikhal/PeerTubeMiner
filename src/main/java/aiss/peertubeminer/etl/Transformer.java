@@ -8,7 +8,7 @@ import java.util.UUID;
 
 public class Transformer {
 
-    public VMCaption captionTransformer (PTCaption ptCaption){
+    public static VMCaption captionTransformer (PTCaption ptCaption){
         return new VMCaption(
                 UUID.randomUUID().toString(),
                 ptCaption.getCaptionPath(),
@@ -16,7 +16,7 @@ public class Transformer {
         );
     }
 
-    public VMChannel channelTransformer (PTChannel ptChannel){
+    public static VMChannel channelTransformer (PTChannel ptChannel){
         return new VMChannel(
                 ptChannel.getId().toString(),
                 ptChannel.getName(),
@@ -26,7 +26,7 @@ public class Transformer {
         );
     }
 
-    public VMComment commentTransformer (PTComment ptComment){
+    public static VMComment commentTransformer (PTComment ptComment){
         return new VMComment(
                 ptComment.getId().toString(),
                 ptComment.getText(),
@@ -34,7 +34,7 @@ public class Transformer {
         );
     }
 
-    public VMVideo videoTransformer (PTVideo ptVideo){
+    public static VMVideo videoTransformer (PTVideo ptVideo){
         return new VMVideo(
                 ptVideo.getId().toString(),
                 ptVideo.getName(),
@@ -46,7 +46,7 @@ public class Transformer {
         );
     }
 
-    public VMUser accountTransformer (PTAccount ptAccount){
+    public static VMUser accountTransformer (PTAccount ptAccount){
         return new VMUser(
                 ptAccount.getId().longValue(),
                 ptAccount.getName(),
