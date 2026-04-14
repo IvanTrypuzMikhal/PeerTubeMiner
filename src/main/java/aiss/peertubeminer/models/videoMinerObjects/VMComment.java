@@ -6,22 +6,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-/**
- * @author Juan C. Alonso
- */
-@Entity
-@Table(name = "Comment")
 public class VMComment {
 
-    @Id
-    @JsonProperty("id")
     private String id;
-
-    @JsonProperty("text")
-    @Column(columnDefinition="TEXT")
     private String text;
-
-    @JsonProperty("createdOn")
     private String createdOn;
 
     public String getId() {

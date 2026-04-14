@@ -3,25 +3,11 @@ package aiss.peertubeminer.models.videoMinerObjects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
-/**
- * @author Juan C. Alonso
- */
-@Entity
-@Table(name = "VMUser")
 public class VMUser {
 
-    @Id
-    @JsonProperty("id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
-    @JsonProperty("name")
     private String name;
-
-    @JsonProperty("user_link")
     private String user_link;
-
-    @JsonProperty("picture_link")
     private String picture_link;
 
     public Long getId() {
