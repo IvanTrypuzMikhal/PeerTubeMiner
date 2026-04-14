@@ -51,7 +51,7 @@ public class Transformer {
                 ptAccount.getId().longValue(),
                 ptAccount.getName(),
                 ptAccount.getUrl(),
-                ptAccount.getAvatars().getFirst().getFileUrl()
+                ptAccount.getAvatars().get(0).getFileUrl()
         );
     }
 }

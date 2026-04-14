@@ -17,13 +17,14 @@ public class ChannelController {
     public ChannelService channelService;
 
     @GetMapping("/{channelName}")
-    public PTChannel getChannel(@PathVariable String channelName){
-        return channelService.getChannel(channelName);
+    public VMChannel getChannel(@PathVariable String channelName){
+        return channelService.buildChannel(channelName);
     }
-
+/*
     @PostMapping("/{channelName}")
     @ResponseStatus(HttpStatus.CREATED) //201
     public VMChannel createChannel(@PathVariable String channelName){
         return channelService.buildChannel(channelName);
     }
+*/
 }
