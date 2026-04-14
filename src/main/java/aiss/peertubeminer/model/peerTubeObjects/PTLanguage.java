@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "id",
 })
 @Generated("jsonschema2pojo")
-public class Language {
+public class PTLanguage {
 
     @JsonProperty("id")
     private String id;

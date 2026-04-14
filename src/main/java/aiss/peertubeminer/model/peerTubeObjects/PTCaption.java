@@ -13,20 +13,20 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "captionPath",
 })
 @Generated("jsonschema2pojo")
-public class Caption {
+public class PTCaption {
 
     @JsonProperty("language")
-    private Language language;
+    private PTLanguage language;
     @JsonProperty("captionPath")
     private String captionPath;
 
     @JsonProperty("language")
-    public Language getLanguage() {
+    public PTLanguage getLanguage() {
         return language;
     }
 
     @JsonProperty("language")
-    public void setLanguage(Language language) {
+    public void setLanguage(PTLanguage language) {
         this.language = language;
     }
 

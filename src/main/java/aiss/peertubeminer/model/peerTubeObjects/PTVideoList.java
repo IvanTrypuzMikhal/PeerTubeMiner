@@ -13,18 +13,18 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "data",
 })
 @Generated("jsonschema2pojo")
-public class VideoList {
+public class PTVideoList {
 
     @JsonProperty("data")
-    private List<Video> data;
+    private List<PTVideo> data;
 
     @JsonProperty("data")
-    public List<Video> getData() {
+    public List<PTVideo> getData() {
         return data;
     }
 
     @JsonProperty("data")
-    public void setData(List<Video> data) {
+    public void setData(List<PTVideo> data) {
         this.data = data;
     }
 

@@ -15,7 +15,7 @@ class AccountServiceTest {
     @DisplayName("Get channel by name")
 
     void getAccount(){
-        Channel channel = channelService.getChannel("poney@peertube2.cpy.re");
+        PTChannel channel = channelService.getChannel("poney@peertube2.cpy.re");
         System.out.println(channel);
     }
 
@@ -27,7 +27,7 @@ class AccountServiceTest {
     @DisplayName("Get captions")
 
     void getCaptions(){
-        CaptionList captions = captionService.getCaptions("3609");
+        PTCaptionList captions = captionService.getCaptions("3609");
         System.out.println(captions);
     }
 
@@ -39,7 +39,7 @@ class AccountServiceTest {
     @DisplayName("Get comments")
 
     void getComments(){
-        CommentList comments = commentService.getComments("3601");
+        PTCommentList comments = commentService.getComments("3601");
         System.out.println(comments);
     }
 
@@ -50,7 +50,7 @@ class AccountServiceTest {
     @DisplayName("Get videos of a channel")
 
     void getVideos(){
-        VideoList videos = videoService.getVideos("angie_channel@peertube2.cpy.re");
+        PTVideoList videos = videoService.getVideos("angie_channel@peertube2.cpy.re");
         System.out.println(videos);
     }
 

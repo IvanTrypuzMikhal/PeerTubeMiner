@@ -1,6 +1,6 @@
 package aiss.peertubeminer.services;
 
-import aiss.peertubeminer.model.peerTubeObjects.CaptionList;
+import aiss.peertubeminer.model.peerTubeObjects.PTCaptionList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -11,9 +11,9 @@ public class CaptionService {
     @Autowired
     RestTemplate restTemplate;
 
-    public CaptionList getCaptions(String videoId){
+    public PTCaptionList getCaptions(String videoId){
         String uri = "https://peertube.cpy.re/api/v1/videos/"+videoId+"/captions";
-        return restTemplate.getForObject(uri, CaptionList.class);
+        return restTemplate.getForObject(uri, PTCaptionList.class);
     }
 
 }

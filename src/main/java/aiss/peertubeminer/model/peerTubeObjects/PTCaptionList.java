@@ -14,20 +14,20 @@ import com.fasterxml.jackson.annotation.*;
     "data",
 })
 @Generated("jsonschema2pojo")
-public class CaptionList {
+public class PTCaptionList {
 
     @JsonProperty("data")
-    private List<Caption> data;
+    private List<PTCaption> data;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
     @JsonProperty("data")
-    public List<Caption> getData() {
+    public List<PTCaption> getData() {
         return data;
     }
 
     @JsonProperty("data")
-    public void setData(List<Caption> data) {
+    public void setData(List<PTCaption> data) {
         this.data = data;
     }
 
