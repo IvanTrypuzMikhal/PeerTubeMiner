@@ -15,22 +15,22 @@ import com.fasterxml.jackson.annotation.*;
     "totalNotDeletedComments"
 })
 @Generated("jsonschema2pojo")
-public class PeerTubeCommentList {
+public class CommentList {
 
     @JsonProperty("data")
-    private List<PeerTubeComment> data;
+    private List<Comment> data;
     @JsonProperty("totalNotDeletedComments")
     private Integer totalNotDeletedComments;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
     @JsonProperty("data")
-    public List<PeerTubeComment> getData() {
+    public List<Comment> getData() {
         return data;
     }
 
     @JsonProperty("data")
-    public void setData(List<PeerTubeComment> data) {
+    public void setData(List<Comment> data) {
         this.data = data;
     }
 

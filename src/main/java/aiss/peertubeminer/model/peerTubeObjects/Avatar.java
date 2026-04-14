@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.*;
     "fileUrl",
 })
 @Generated("jsonschema2pojo")
-public class PeerTubeAvatar {
+public class Avatar {
 
     @JsonProperty("fileUrl")
     private String fileUrl;

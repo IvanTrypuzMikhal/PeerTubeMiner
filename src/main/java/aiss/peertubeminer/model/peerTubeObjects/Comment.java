@@ -1,9 +1,7 @@
 
 package aiss.peertubeminer.model.peerTubeObjects;
 
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+
 import javax.annotation.processing.Generated;
 
 import com.fasterxml.jackson.annotation.*;
@@ -11,32 +9,19 @@ import com.fasterxml.jackson.annotation.*;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "name",
     "id",
+    "text",
     "createdAt",
-    "description"
 })
 @Generated("jsonschema2pojo")
-public class PeerTubeChannel {
+public class Comment {
 
-    @JsonProperty("displayName")
-    private String name;
     @JsonProperty("id")
     private Integer id;
+    @JsonProperty("text")
+    private String text;
     @JsonProperty("createdAt")
     private String createdAt;
-    @JsonProperty("description")
-    private String description;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     @JsonProperty("id")
     public Integer getId() {
@@ -46,6 +31,16 @@ public class PeerTubeChannel {
     @JsonProperty("id")
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    @JsonProperty("text")
+    public String getText() {
+        return text;
+    }
+
+    @JsonProperty("text")
+    public void setText(String text) {
+        this.text = text;
     }
 
     @JsonProperty("createdAt")
@@ -58,14 +53,12 @@ public class PeerTubeChannel {
         this.createdAt = createdAt;
     }
 
-    @JsonProperty("description")
-    public String getDescription() {
-        return description;
+    @Override
+    public String toString() {
+        return "PeerTubeComment{" +
+                "id=" + id +
+                ", text='" + text + '\'' +
+                ", createdAt='" + createdAt + '\'' +
+                '}';
     }
-
-    @JsonProperty("description")
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
 }
