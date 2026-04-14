@@ -16,6 +16,16 @@ public class VMVideo {
     private List<VMComment> VMComments;
     private List<VMCaption> VMCaptions;
 
+    public VMVideo(String id, String name, String description, String releaseTime, VMUser author, List<VMComment> VMComments, List<VMCaption> VMCaptions) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.releaseTime = releaseTime;
+        this.author = author;
+        this.VMComments = VMComments;
+        this.VMCaptions = VMCaptions;
+    }
+
     public String getId() {
         return id;
     }

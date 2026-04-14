@@ -11,6 +11,11 @@ public class VMCaption {
     private String name;
     private String language;
 
+    public VMCaption(String id, String name, String language) {
+        this.id = id;
+        this.name = name;
+        this.language = language;
+    }
 
     public String getId() {
         return id;
