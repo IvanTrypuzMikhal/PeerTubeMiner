@@ -17,7 +17,6 @@ public class ChannelController {
 
     @GetMapping("/{channelName}")
     public VMChannel getChannel(@PathVariable String channelName){
-        // TODO: Implementar buildChannel
         return channelService.buildChannel(channelName);
     }
 

@@ -3,10 +3,7 @@ package aiss.peertubeminer.services;
 
 import aiss.peertubeminer.etl.Transformer;
 import aiss.peertubeminer.models.peerTubeObjects.*;
-import aiss.peertubeminer.models.videoMinerObjects.VMCaption;
-import aiss.peertubeminer.models.videoMinerObjects.VMChannel;
-import aiss.peertubeminer.models.videoMinerObjects.VMComment;
-import aiss.peertubeminer.models.videoMinerObjects.VMVideo;
+import aiss.peertubeminer.models.videoMinerObjects.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -37,9 +34,10 @@ public class ChannelService {
         PTVideoList videos = videoService.getVideos(channelName);
         List<PTVideo> videoList = videos.getData();
 
-        List<VMVideo> vmVideos = new ArrayList<>();
         for(PTVideo ptVideo : videoList){
             VMVideo vmVideo = Transformer.videoTransformer(ptVideo);
+            VMUser vmUser = Transformer.accountTransformer(ptVideo.getAccount());
+            vmVideo.setAuthor(vmUser);
             List<PTCaption> captionList = captionService.getCaptions(ptVideo.getId().toString());
             List<PTComment> commentList = commentService.getComments(ptVideo.getId().toString());
 

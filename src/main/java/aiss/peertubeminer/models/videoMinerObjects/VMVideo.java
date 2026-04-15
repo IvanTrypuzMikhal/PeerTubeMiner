@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class VMVideo {
@@ -13,8 +14,8 @@ public class VMVideo {
     private String description;
     private String releaseTime;
     private VMUser author;
-    private List<VMComment> VMComments;
-    private List<VMCaption> VMCaptions;
+    private List<VMComment> VMComments = new ArrayList<>();
+    private List<VMCaption> VMCaptions = new ArrayList<>();
 
     public VMVideo(String id, String name, String description, String releaseTime, VMUser author, List<VMComment> VMComments, List<VMCaption> VMCaptions) {
         this.id = id;
