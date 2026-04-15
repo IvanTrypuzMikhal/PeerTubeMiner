@@ -36,8 +36,6 @@ public class ChannelService {
 
         for(PTVideo ptVideo : videoList){
             VMVideo vmVideo = Transformer.videoTransformer(ptVideo);
-            VMUser vmUser = Transformer.accountTransformer(ptVideo.getAccount());
-            vmVideo.setAuthor(vmUser);
             List<PTCaption> captionList = captionService.getCaptions(ptVideo.getId().toString());
             List<PTComment> commentList = commentService.getComments(ptVideo.getId().toString());
 
