@@ -53,13 +53,16 @@ public class ChannelService {
         return vmChannel;
     }
 
+    public VMChannel buildAndPostChannel(String channelName) {
+        VMChannel vmChannel = buildChannel(channelName);
+        restTemplate.postForObject("http://localhost:8080/channels", vmChannel, VMChannel.class);
+        return vmChannel;
+    }
 
     public PTChannel getChannel(String channelName){
         String uri = "https://peertube.cpy.re/api/v1/video-channels/"+channelName;
         return restTemplate.getForObject(uri, PTChannel.class);
 
     }
-
-    
 
 }

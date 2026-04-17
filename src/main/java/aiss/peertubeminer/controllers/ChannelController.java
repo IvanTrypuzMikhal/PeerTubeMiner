@@ -20,4 +20,8 @@ public class ChannelController {
         return channelService.buildChannel(channelName);
     }
 
+    @PostMapping("/{channelName}")
+    public VMChannel postChannel(@PathVariable String channelName) {
+        return channelService.buildAndPostChannel(channelName);
+    }
 }
