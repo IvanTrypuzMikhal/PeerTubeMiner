@@ -16,12 +16,12 @@ public class ChannelController {
     public ChannelService channelService;
 
     @GetMapping("/{channelName}")
-    public VMChannel getChannel(@PathVariable String channelName){
-        return channelService.buildChannel(channelName);
+    public VMChannel getChannel(@PathVariable String channelName, @RequestParam(defaultValue = "10") int maxVideos, @RequestParam(defaultValue = "10") int maxComments){
+        return channelService.buildChannel(channelName, maxVideos, maxComments);
     }
 
     @PostMapping("/{channelName}")
-    public VMChannel postChannel(@PathVariable String channelName) {
-        return channelService.buildAndPostChannel(channelName);
+    public VMChannel postChannel(@PathVariable String channelName, @RequestParam(defaultValue = "10") int maxVideos, @RequestParam(defaultValue = "10") int maxComments) {
+        return channelService.buildAndPostChannel(channelName, maxVideos, maxComments);
     }
 }

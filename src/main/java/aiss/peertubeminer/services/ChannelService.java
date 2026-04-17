@@ -27,17 +27,17 @@ public class ChannelService {
     VideoService videoService;
 
 
-    public VMChannel buildChannel(String channelName){
+    public VMChannel buildChannel(String channelName, int maxVideos, int maxComments){
         PTChannel ptChannel = getPTChannel(channelName);
         VMChannel vmChannel = Transformer.channelTransformer(ptChannel);
 
         PTVideoList videos = videoService.getVideos(channelName);
-        List<PTVideo> videoList = videos.getData();
+        List<PTVideo> videoList = videos.getData().stream().limit(maxVideos).toList();
 
         for(PTVideo ptVideo : videoList){
             VMVideo vmVideo = Transformer.videoTransformer(ptVideo);
             List<PTCaption> captionList = captionService.getCaptions(ptVideo.getId().toString());
-            List<PTComment> commentList = commentService.getComments(ptVideo.getId().toString());
+            List<PTComment> commentList = commentService.getComments(ptVideo.getId().toString()).stream().limit(maxComments).toList();
 
             for(PTCaption ptCaption:captionList){
                 VMCaption vmCaption = Transformer.captionTransformer(ptCaption);
@@ -53,13 +53,13 @@ public class ChannelService {
         return vmChannel;
     }
 
-    public VMChannel getChannel(String channelName){
-        return buildChannel(channelName);
+    public VMChannel getChannel(String channelName, int maxVideos, int maxComments){
+        return buildChannel(channelName, maxVideos, maxComments);
     }
 
 
-    public VMChannel buildAndPostChannel(String channelName) {
-        VMChannel vmChannel = buildChannel(channelName);
+    public VMChannel buildAndPostChannel(String channelName, int maxVideos, int maxComments) {
+        VMChannel vmChannel = buildChannel(channelName, maxVideos, maxComments);
         restTemplate.postForObject("http://localhost:8080/channels", vmChannel, VMChannel.class);
         return vmChannel;
     }
