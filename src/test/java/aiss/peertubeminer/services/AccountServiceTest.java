@@ -17,7 +17,7 @@ class AccountServiceTest {
     @DisplayName("Get channel by name")
 
     void getAccount(){
-        PTChannel channel = channelService.getChannel("poney@peertube2.cpy.re");
+        PTChannel channel = channelService.getPTChannel("poney@peertube2.cpy.re");
         System.out.println(channel);
     }
 
