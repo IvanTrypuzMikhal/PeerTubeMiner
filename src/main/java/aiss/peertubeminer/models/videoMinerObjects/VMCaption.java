@@ -1,11 +1,5 @@
 package aiss.peertubeminer.models.videoMinerObjects;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
-
 public class VMCaption {
     private String id;
     private String link;

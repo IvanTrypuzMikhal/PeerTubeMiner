@@ -1,8 +1,5 @@
 package aiss.peertubeminer.models.videoMinerObjects;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.*;
-
 public class VMUser {
 
     private Long id;
