@@ -1,7 +1,5 @@
 package aiss.peertubeminer.controllers;
 
-
-import aiss.peertubeminer.models.peerTubeObjects.PTChannel;
 import aiss.peertubeminer.models.videoMinerObjects.VMChannel;
 import aiss.peertubeminer.services.ChannelService;
 import io.swagger.v3.oas.annotations.Operation;
