@@ -15,7 +15,7 @@ import org.springframework.web.client.RestTemplate;
         info = @Info(
                 title = "PeerTubeMiner API",
                 version = "1.0",
-                description = "API REST para extraer canales, vídeos, subtítulos y comentarios de PeerTube y transformarlos al formato VideoMiner."
+                description = "REST API to extract channels, videos, captions, and comments from PeerTube and transform them into the VideoMiner format."
         )
 )
 

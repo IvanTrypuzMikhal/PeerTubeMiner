@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Tag(
         name = "PeerTube Channels",
-        description = "Operaciones para obtener canales de PeerTube y transformarlos al formato VideoMiner"
+        description = "Operations to retrieve PeerTube channels and transform them to the VideoMiner format"
 )
 
 @RestController
@@ -27,14 +27,14 @@ public class ChannelController {
     public ChannelService channelService;
 
     @Operation(
-            summary = "Obtener un canal de PeerTube",
-            description = "Obtiene un canal de PeerTube por su nombre y el host (ex. @peertube2.cpy.re), opcionalmente incluyendo un número limitado de vídeos y comentarios por vídeo. De manera predeterminada los limites son 10 videos y 10 comentarios",
+            summary = "Get a PeerTube channel",
+            description = "Gets a PeerTube channel by name and host (e.g., @peertube2.cpy.re), optionally including a limited number of videos and comments per video. By default, the limits are 10 videos and 10 comments.",
             tags = { "PeerTube Channels" }
     )
     @ApiResponses({
             @ApiResponse(
                     responseCode = "200",
-                    description = "Canal obtenido correctamente",
+                    description = "Channel retrieved successfully",
                     content = {
                             @Content(
                                     mediaType = "application/json",
@@ -44,36 +44,36 @@ public class ChannelController {
             ),
             @ApiResponse(
                     responseCode = "400",
-                    description = "Parámetros de entrada inválidos",
+                    description = "Invalid input parameters",
                     content = @Content
             ),
             @ApiResponse(
                     responseCode = "404",
-                    description = "Canal no encontrado en PeerTube",
+                    description = "Channel not found in PeerTube",
                     content = @Content
             ),
             @ApiResponse(
                     responseCode = "500",
-                    description = "Error interno del servidor",
+                    description = "Internal server error",
                     content = @Content
             )
     })
     @GetMapping("/{channelName}")
     public VMChannel getChannel(
             @Parameter(
-                    description = "Nombre del canal de PeerTube que se desea obtener",
+                    description = "Name of the PeerTube channel to retrieve",
                     example = "poney@peertube2.cpy.re"
             )
             @PathVariable String channelName,
 
             @Parameter(
-                    description = "Número máximo de vídeos que se incluirán en el canal",
+                    description = "Maximum number of videos to include in the channel",
                     example = "10"
             )
             @RequestParam(defaultValue = "10") int maxVideos,
 
             @Parameter(
-                    description = "Número máximo de comentarios que se incluirán por cada vídeo",
+                    description = "Maximum number of comments to include per video",
                     example = "10"
             )
             @RequestParam(defaultValue = "10") int maxComments) {
@@ -81,14 +81,14 @@ public class ChannelController {
     }
 
     @Operation(
-            summary = "Obtener y enviar un canal a VideoMiner",
-            description = "Obtiene un canal de PeerTube, lo transforma al formato VideoMiner y lo envía mediante una petición POST al servicio VideoMiner.",
+            summary = "Get and send a channel to VideoMiner",
+            description = "Gets a PeerTube channel, transforms it to the VideoMiner format, and sends it via a POST request to the VideoMiner service.",
             tags = { "PeerTube Channels" }
     )
     @ApiResponses({
             @ApiResponse(
                     responseCode = "200",
-                    description = "Canal obtenido y enviado correctamente a VideoMiner",
+                    description = "Channel retrieved and sent to VideoMiner successfully",
                     content = {
                             @Content(
                                     mediaType = "application/json",
@@ -98,17 +98,17 @@ public class ChannelController {
             ),
             @ApiResponse(
                     responseCode = "400",
-                    description = "Parámetros de entrada inválidos",
+                    description = "Invalid input parameters",
                     content = @Content
             ),
             @ApiResponse(
                     responseCode = "404",
-                    description = "Canal no encontrado en PeerTube",
+                    description = "Channel not found in PeerTube",
                     content = @Content
             ),
             @ApiResponse(
                     responseCode = "500",
-                    description = "Error interno al obtener o enviar el canal",
+                    description = "Internal error while retrieving or sending the channel",
                     content = @Content
             )
     })
@@ -117,19 +117,19 @@ public class ChannelController {
     @PostMapping("/{channelName}")
     public VMChannel postChannel(
             @Parameter(
-                    description = "Nombre del canal de PeerTube que se desea obtener y enviar a VideoMiner",
+                    description = "Name of the PeerTube channel to retrieve and send to VideoMiner",
                     example = "poney@peertube2.cpy.re"
             )
             @PathVariable String channelName,
 
             @Parameter(
-                    description = "Número máximo de vídeos que se incluirán en el canal",
+                    description = "Maximum number of videos to include in the channel",
                     example = "10"
             )
             @RequestParam(defaultValue = "10") int maxVideos,
 
             @Parameter(
-                    description = "Número máximo de comentarios que se incluirán por cada vídeo",
+                    description = "Maximum number of comments to include per video",
                     example = "10"
             )
             @RequestParam(defaultValue = "10") int maxComments) {
