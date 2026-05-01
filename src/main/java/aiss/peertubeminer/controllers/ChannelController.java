@@ -138,7 +138,7 @@ public class ChannelController {
             )
             @RequestParam(defaultValue = "10") int maxComments) throws ChannelNotFoundException {
         try {
-            return channelService.buildAndPostChannel(channelName, maxVideos, maxComments);
+            return channelService.postChannel(channelName, maxVideos, maxComments);
         } catch (Exception e) {
             throw new ChannelNotFoundException();
         }

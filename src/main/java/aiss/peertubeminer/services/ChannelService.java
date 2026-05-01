@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -30,7 +29,9 @@ public class ChannelService {
         return buildChannel(channelName, maxVideos, maxComments);
     }
 
-    public VMChannel buildAndPostChannel(String channelName, int maxVideos, int maxComments) {
+
+
+    public VMChannel postChannel(String channelName, int maxVideos, int maxComments) {
         VMChannel vmChannel = buildChannel(channelName, maxVideos, maxComments);
         restTemplate.postForObject("http://localhost:8080/channels", vmChannel, VMChannel.class);
         return vmChannel;
