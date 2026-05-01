@@ -25,11 +25,9 @@ public class ChannelService {
     @Autowired
     VideoService videoService;
 
-    public VMChannel getChannel(String id, int maxVideos, int maxComments){
-        return buildChannel(id, maxVideos, maxComments);
+    public VMChannel getChannel(String channelName, int maxVideos, int maxComments){
+        return buildChannel(channelName, maxVideos, maxComments);
     }
-
-
 
     public VMChannel postChannel(String id, int maxVideos, int maxComments) {
         VMChannel vmChannel = buildChannel(id, maxVideos, maxComments);
@@ -37,11 +35,11 @@ public class ChannelService {
         return vmChannel;
     }
 
-    public VMChannel buildChannel(String id, int maxVideos, int maxComments){
-        PTChannel ptChannel = getPTChannel(id);
+    public VMChannel buildChannel(String channelName, int maxVideos, int maxComments){
+        PTChannel ptChannel = getPTChannel(channelName);
         VMChannel vmChannel = Transformer.channelTransformer(ptChannel);
 
-        PTVideoList videos = videoService.getVideos(id);
+        PTVideoList videos = videoService.getVideos(channelName);
         List<PTVideo> videoList = videos.getData().stream().limit(maxVideos).toList();
 
         for(PTVideo ptVideo : videoList){
@@ -63,8 +61,8 @@ public class ChannelService {
         return vmChannel;
     }
 
-    public PTChannel getPTChannel(String id){
-        String uri = "https://peertube.cpy.re/api/v1/video-channels/"+id;
+    public PTChannel getPTChannel(String channelName){
+        String uri = "https://peertube.cpy.re/api/v1/video-channels/"+channelName;
         return restTemplate.getForObject(uri, PTChannel.class);
 
     }
