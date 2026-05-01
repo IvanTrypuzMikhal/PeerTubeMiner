@@ -29,8 +29,6 @@ public class ChannelService {
         return buildChannel(channelName, maxVideos, maxComments);
     }
 
-
-
     public VMChannel postChannel(String channelName, int maxVideos, int maxComments) {
         VMChannel vmChannel = buildChannel(channelName, maxVideos, maxComments);
         restTemplate.postForObject("http://localhost:8080/channels", vmChannel, VMChannel.class);
