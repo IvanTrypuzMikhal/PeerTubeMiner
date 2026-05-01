@@ -12,8 +12,8 @@ public class VideoService {
     @Autowired
     RestTemplate restTemplate;
 
-    public PTVideoList getVideos(String channelName){
-        String uri = "https://peertube.cpy.re/api/v1/video-channels/"+channelName+"/videos";
+    public PTVideoList getVideos(String id){
+        String uri = "https://peertube.cpy.re/api/v1/video-channels/"+id+"/videos";
         return restTemplate.getForObject(uri, PTVideoList.class);
     }
 

@@ -59,13 +59,13 @@ public class ChannelController {
                     content = @Content
             )
     })
-    @GetMapping("/{channelName}")
+    @GetMapping("/{id}")
     public VMChannel getChannel(
             @Parameter(
                     description = "Name of the PeerTube channel to retrieve",
                     example = "poney@peertube2.cpy.re"
             )
-            @PathVariable String channelName,
+            @PathVariable String id,
 
             @Parameter(
                     description = "Maximum number of videos to include in the channel",
@@ -79,7 +79,7 @@ public class ChannelController {
             )
             @RequestParam(defaultValue = "10") int maxComments) throws ChannelNotFoundException {
         try {
-            return channelService.getChannel(channelName, maxVideos, maxComments);
+            return channelService.getChannel(id, maxVideos, maxComments);
         } catch (Exception e) {
             throw new ChannelNotFoundException();
         }
@@ -118,13 +118,13 @@ public class ChannelController {
                     content = @Content
             )
     })
-    @PostMapping("/{channelName}")
+    @PostMapping("/{id}")
     public VMChannel postChannel(
             @Parameter(
                     description = "Name of the PeerTube channel to retrieve and send to VideoMiner",
                     example = "poney@peertube2.cpy.re"
             )
-            @PathVariable String channelName,
+            @PathVariable String id,
 
             @Parameter(
                     description = "Maximum number of videos to include in the channel",
@@ -138,7 +138,7 @@ public class ChannelController {
             )
             @RequestParam(defaultValue = "10") int maxComments) throws ChannelNotFoundException {
         try {
-            return channelService.postChannel(channelName, maxVideos, maxComments);
+            return channelService.postChannel(id, maxVideos, maxComments);
         } catch (Exception e) {
             throw new ChannelNotFoundException();
         }
