@@ -1,5 +1,6 @@
 package aiss.peertubeminer.controllers;
 
+import aiss.peertubeminer.exception.ChannelNotFoundException;
 import aiss.peertubeminer.models.videoMinerObjects.VMChannel;
 import aiss.peertubeminer.services.ChannelService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -76,9 +77,14 @@ public class ChannelController {
                     description = "Maximum number of comments to include per video",
                     example = "10"
             )
-            @RequestParam(defaultValue = "10") int maxComments) {
-        return channelService.buildChannel(channelName, maxVideos, maxComments);
+            @RequestParam(defaultValue = "10") int maxComments) throws ChannelNotFoundException {
+        try {
+            return channelService.getChannel(channelName, maxVideos, maxComments);
+        } catch (Exception e) {
+            throw new ChannelNotFoundException();
+        }
     }
+
 
     @Operation(
             summary = "Get and send a channel to VideoMiner",
@@ -112,8 +118,6 @@ public class ChannelController {
                     content = @Content
             )
     })
-
-
     @PostMapping("/{channelName}")
     public VMChannel postChannel(
             @Parameter(
@@ -132,7 +136,11 @@ public class ChannelController {
                     description = "Maximum number of comments to include per video",
                     example = "10"
             )
-            @RequestParam(defaultValue = "10") int maxComments) {
-        return channelService.buildAndPostChannel(channelName, maxVideos, maxComments);
+            @RequestParam(defaultValue = "10") int maxComments) throws ChannelNotFoundException {
+        try {
+            return channelService.buildAndPostChannel(channelName, maxVideos, maxComments);
+        } catch (Exception e) {
+            throw new ChannelNotFoundException();
+        }
     }
 }

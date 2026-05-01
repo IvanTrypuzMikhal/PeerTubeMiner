@@ -26,6 +26,15 @@ public class ChannelService {
     @Autowired
     VideoService videoService;
 
+    public VMChannel getChannel(String channelName, int maxVideos, int maxComments){
+        return buildChannel(channelName, maxVideos, maxComments);
+    }
+
+    public VMChannel buildAndPostChannel(String channelName, int maxVideos, int maxComments) {
+        VMChannel vmChannel = buildChannel(channelName, maxVideos, maxComments);
+        restTemplate.postForObject("http://localhost:8080/channels", vmChannel, VMChannel.class);
+        return vmChannel;
+    }
 
     public VMChannel buildChannel(String channelName, int maxVideos, int maxComments){
         PTChannel ptChannel = getPTChannel(channelName);
@@ -50,17 +59,6 @@ public class ChannelService {
             vmChannel.getVideos().add(vmVideo);
         }
 
-        return vmChannel;
-    }
-
-    public VMChannel getChannel(String channelName, int maxVideos, int maxComments){
-        return buildChannel(channelName, maxVideos, maxComments);
-    }
-
-
-    public VMChannel buildAndPostChannel(String channelName, int maxVideos, int maxComments) {
-        VMChannel vmChannel = buildChannel(channelName, maxVideos, maxComments);
-        restTemplate.postForObject("http://localhost:8080/channels", vmChannel, VMChannel.class);
         return vmChannel;
     }
 
