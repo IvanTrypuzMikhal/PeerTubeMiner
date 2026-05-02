@@ -11,6 +11,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -93,7 +94,7 @@ public class ChannelController {
     )
     @ApiResponses({
             @ApiResponse(
-                    responseCode = "200",
+                    responseCode = "201",
                     description = "Channel retrieved and sent to VideoMiner successfully",
                     content = {
                             @Content(
@@ -119,6 +120,7 @@ public class ChannelController {
             )
     })
     @PostMapping("/{id}")
+    @ResponseStatus(HttpStatus.CREATED)
     public VMChannel postChannel(
             @Parameter(
                     description = "Name of the PeerTube channel to retrieve and send to VideoMiner",
