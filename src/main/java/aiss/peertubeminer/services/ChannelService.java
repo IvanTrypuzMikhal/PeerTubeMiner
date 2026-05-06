@@ -31,7 +31,7 @@ public class ChannelService {
 
     public VMChannel postChannel(String id, int maxVideos, int maxComments) {
         VMChannel vmChannel = buildChannel(id, maxVideos, maxComments);
-        restTemplate.postForObject("http://localhost:8080/channels", vmChannel, VMChannel.class);
+        restTemplate.postForObject("http://localhost:8080/videominer/channels", vmChannel, VMChannel.class);
         return vmChannel;
     }
 
