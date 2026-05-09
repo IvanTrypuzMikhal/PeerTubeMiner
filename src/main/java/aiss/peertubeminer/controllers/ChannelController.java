@@ -30,7 +30,7 @@ public class ChannelController {
 
     @Operation(
             summary = "Get a PeerTube channel",
-            description = "Gets a PeerTube channel by name and host (e.g., @peertube2.cpy.re), optionally including a limited number of videos and comments per video. By default, the limits are 10 videos and 10 comments.",
+            description = "Gets a PeerTube channel by name and host (e.g., @peertube2.cpy.re), optionally including a limited number of videos and comments per video. By default, the limits are 10 videos and 2 comments.",
             tags = { "PeerTube Channels" }
     )
     @ApiResponses({
@@ -76,9 +76,9 @@ public class ChannelController {
 
             @Parameter(
                     description = "Maximum number of comments to include per video",
-                    example = "10"
+                    example = "2"
             )
-            @RequestParam(defaultValue = "10") int maxComments) throws ChannelNotFoundException {
+            @RequestParam(defaultValue = "2") int maxComments) throws ChannelNotFoundException {
         try {
             return channelService.getChannel(id, maxVideos, maxComments);
         } catch (Exception e) {
@@ -136,9 +136,9 @@ public class ChannelController {
 
             @Parameter(
                     description = "Maximum number of comments to include per video",
-                    example = "10"
+                    example = "2"
             )
-            @RequestParam(defaultValue = "10") int maxComments) throws ChannelNotFoundException {
+            @RequestParam(defaultValue = "2") int maxComments) throws ChannelNotFoundException {
         try {
             return channelService.postChannel(id, maxVideos, maxComments);
         } catch (Exception e) {
